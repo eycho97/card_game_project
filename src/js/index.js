@@ -22,6 +22,13 @@ elements.searchStartBtn.addEventListener('click', e => {
   startGame();
 })
 
+elements.restartButton.addEventListener('click', e=> {
+  e.preventDefault;
+  gV.hideGameResult();
+  gV.hideCards();
+  startGame();
+})
+
 
 const startGame = async () => {
   // get guess from view
@@ -50,21 +57,23 @@ const controlSearch = async () => {
 
   const guess = gV.getInput();
   var value_int = findVal(state.card.value);
-  var correct = false;
+  state.correct = false;
   if (parseInt(guess) > value_int){
     console.log("too high");
   } else if (parseInt(guess) < value_int) {
     console.log("too low");
   } else {
-    correct = true;
+    state.correct = true;
     console.log("You are right!");
   }
   console.log(guess);
   //5 render results on UI
   state.guesses--;
   console.log(state.guesses);
-  if (state.guesses == 0 || correct){
+  if (state.guesses == 0 || state.correct){
     gV.renderCard(state.card.data);
+    gV.hideGuessForm();
+    gV.showGameResult(state.correct);
   }
   
 

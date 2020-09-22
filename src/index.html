@@ -18,19 +18,26 @@
     
   <div class="container" style="margin-top:100px">
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-4">
         <div class="cards">
           <ul class="cards_list">
           </ul>
         </div>
       </div>
-      <div class="status-display text-center" style="display:none">
-        <h2>You have lost</h2>
-        <button class="play-again btn btn-primary">
-          <span>Play Again</span>
-        </button>
+      <div class="col-sm-4">
+        <div class="feedback text-center">
+          <h2 class="higher" style="display:none">Higher</h2>
+          <h2 class="lower" style="display:none">Lower</h2>
+        </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
+        <div class="status-display text-center" style="display:none">
+          <h2 class="win" style="display:none">You Have Won!</h2>
+          <h2 class="lose" style="display:none">You Have Lost...</h2>
+          <button class="play-again btn btn-primary">
+            <span>Play Again</span>
+          </button>
+        </div>
         <form class="guess" style="display:none">
           <input type="text" class="guess__field" placeholder="Enter your guess">
           <button class="btn btn-primary">
