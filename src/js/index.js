@@ -48,7 +48,7 @@ const startGame = async () => {
   var value = state.card.value;
   console.log(value);
 
-  state.guesses = 5;
+  state.guesses = 3;
   gV.hideStartBtn();
   gV.showGuessForm();
 }
