@@ -31,8 +31,12 @@ const controlSearch = async () => {
     //4 Search for card
     await state.deck.getData();
 
+    var deck_id = state.deck.deck_id;
+    console.log(deck_id);
     //5 render results on UI
-    console.log(state.deck.deck_id);
+    await state.deck.newCard(deck_id);
+    var value = state.deck.value;
+    console.log(value);
   }
 
 }
