@@ -39,3 +39,23 @@ export const hideGameResult = () => {
   elements.winBlock.style.display = 'none';
   elements.loseBlock.style.display = 'none';
 }
+
+export const showFeedback = () => {
+  elements.searchFeedback.style.display = 'block';
+  elements.higherHint.style.display = 'none';
+  elements.lowerHint.style.display = 'none';
+}
+
+export const hideFeedback = () => {
+  elements.searchFeedback.style.display = 'none';
+}
+
+export const hintHigher = () => {
+  elements.higherHint.style.display = 'block';
+  elements.lowerHint.style.display = 'none';
+}
+
+export const hintLower = () => {
+  elements.higherHint.style.display = 'none';
+  elements.lowerHint.style.display = 'block';
+}

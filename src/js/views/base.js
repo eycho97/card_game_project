@@ -8,6 +8,7 @@ export const elements = {
   cardsList: document.querySelector('.cards_list'),
   winBlock: document.querySelector('.win'),
   loseBlock: document.querySelector('.lose'),
+  searchFeedback: document.querySelector('.feedback'),
   higherHint: document.querySelector('.higher'),
   lowerHint: document.querySelector('.lower')
 };

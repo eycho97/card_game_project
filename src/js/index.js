@@ -54,13 +54,15 @@ const startGame = async () => {
 }
 
 const controlSearch = async () => {
-
+  gV.showFeedback();
   const guess = gV.getInput();
   var value_int = findVal(state.card.value);
   state.correct = false;
   if (parseInt(guess) > value_int){
+    gV.hintLower();
     console.log("too high");
   } else if (parseInt(guess) < value_int) {
+    gV.hintHigher();
     console.log("too low");
   } else {
     state.correct = true;
@@ -71,6 +73,7 @@ const controlSearch = async () => {
   state.guesses--;
   console.log(state.guesses);
   if (state.guesses == 0 || state.correct){
+    gV.hideFeedback();
     gV.renderCard(state.card.data);
     gV.hideGuessForm();
     gV.showGameResult(state.correct);
