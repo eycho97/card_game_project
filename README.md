@@ -19,3 +19,5 @@ Run the following command to start the website:
 ```bash
 $ npm start run
 ```
+
+Visit http://localhost:8080/ to use the website
