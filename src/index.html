@@ -11,6 +11,9 @@
 <body>
   <div class="text-center">
     <h1>Simple Card Web App</h1>
+    <button class="start-game btn btn-primary">
+      <span>Start Game</span>
+    </button>
   </div>
     
   <div class="container" style="margin-top:100px">
@@ -21,8 +24,14 @@
           </ul>
         </div>
       </div>
+      <div class="status-display text-center" style="display:none">
+        <h2>You have lost</h2>
+        <button class="play-again btn btn-primary">
+          <span>Play Again</span>
+        </button>
+      </div>
       <div class="col-sm-3">
-        <form class="guess">
+        <form class="guess" style="display:none">
           <input type="text" class="guess__field" placeholder="Enter your guess">
           <button class="btn btn-primary">
               <span>Guess</span>

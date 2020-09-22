@@ -2,6 +2,7 @@ import axios from 'axios';
 import Deck from './models/Deck';
 import * as gV from './views/gameView';
 import {elements} from './views/base';
+import Card from './models/Card';
 
 /** Global state of the app
  * - Deck object
@@ -16,8 +17,13 @@ elements.guessForm.addEventListener('submit', e => {
   controlSearch();
 });
 
+elements.searchStartBtn.addEventListener('click', e => {
+  e.preventDefault;
+  startGame();
+})
 
-const controlSearch = async () => {
+
+const startGame = async () => {
   // get guess from view
 
   // new deck object
@@ -28,27 +34,38 @@ const controlSearch = async () => {
   await state.deck.getData();
   var deck_id = state.deck.deck_id;
   console.log(deck_id);
+  
+  state.card = new Card();
 
-  await state.deck.newCard(deck_id);
-  var value = state.deck.value;
+  await state.card.newCard(deck_id);
+  var value = state.card.value;
   console.log(value);
 
-  var playing = true;
-  while(playing){
-    const guess = gV.getInput();
-    var value_int = findVal(value);
-    if (parseInt(guess) > value_int){
-      console.log("too high");
-    } else if (parseInt(guess) < value_int) {
-      console.log("too low");
-    } else {
-      console.log("You are right!");
-    }
-    console.log(guess);
-    playing = false;
+  state.guesses = 5;
+  gV.hideStartBtn();
+  gV.showGuessForm();
+}
+
+const controlSearch = async () => {
+
+  const guess = gV.getInput();
+  var value_int = findVal(state.card.value);
+  var correct = false;
+  if (parseInt(guess) > value_int){
+    console.log("too high");
+  } else if (parseInt(guess) < value_int) {
+    console.log("too low");
+  } else {
+    correct = true;
+    console.log("You are right!");
   }
+  console.log(guess);
   //5 render results on UI
-  gV.renderCard(state.deck.card);
+  state.guesses--;
+  console.log(state.guesses);
+  if (state.guesses == 0 || correct){
+    gV.renderCard(state.card.data);
+  }
   
 
 }

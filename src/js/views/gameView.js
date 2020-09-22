@@ -15,3 +15,6 @@ export const renderCards = cards => {
   cards.foreach(renderCard);
 }
 
+export const hideStartBtn = () => elements.searchStartBtn.style.display ='none';
+
+export const showGuessForm = () => elements.guessForm.style.display = 'block';
