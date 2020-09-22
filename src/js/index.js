@@ -9,7 +9,10 @@ import Deck from './models/Deck';
 const state = {};
 
 const controlDeck = () => {
-  
+
 }
+
+
 const deck = new Deck(6);
 deck.getData(6);
+console.log(deck.remaining);

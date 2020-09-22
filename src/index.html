@@ -5,12 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Simple Blackjack Game</title>
 </head>
 <body>
-  
+  <div class="text-center">
+    <h1>Simple Card Web App</h1>
+  </div>
+    
+  <div class="container" style="margin-top:100px">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="dealer-row">
+          <div class="text-center">
+            <h3>Dealer</h3>
+          </div>
+          <div class="dealer-hand">
+
+          </div>
+        </div>
+        <div class="player-row">
+          <div class="text-center">
+            <h3>Player</h3>
+          </div>
+          <div class="player-hand">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="action-div">
+          <button type="button" class="action btn btn-success">Hit</button>
+        </div>
+        <div class="action-div">
+          <button type="button" class="action btn btn-danger">Stand</button>
+        </div>
+        <div class="action-div">
+          <button type="button" class="action btn btn-warning">Next</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 </body>
 </html>

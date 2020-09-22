@@ -7,10 +7,9 @@ export default class Deck {
 
   async getData(deck_num) {
     try {
-      const res = await axios(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${deck_num}`)
+      const res = await axios(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${deck_num}`);
       this.remaining = res.data.remaining;
-      console.log(res);
-      console.log(this.remaining);
+      this.deck_id = res.data.deck_id;
     } catch (error) {
       alert(error);
     }
