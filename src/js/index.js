@@ -1,4 +1,7 @@
+import axios from 'axios';
 import Deck from './models/Deck';
+import * as gV from './views/gameView';
+import {elements} from './views/base';
 
 /** Global state of the app
  * - Deck object
@@ -8,11 +11,28 @@ import Deck from './models/Deck';
 
 const state = {};
 
-const controlDeck = () => {
+elements.guessForm.addEventListener('submit', e => {
+  e.preventDefault();
+  controlSearch();
+});
+
+
+const controlSearch = async () => {
+  // get guess from view
+  const guess = gV.getInput();
+  console.log(guess);
+
+  if (guess) {
+    // new deck object
+    state.deck = new Deck();
+
+    //prepare UI for results
+
+    //4 Search for card
+    await state.deck.getData();
+
+    //5 render results on UI
+    console.log(state.deck.deck_id);
+  }
 
 }
-
-
-const deck = new Deck(6);
-deck.getData(6);
-console.log(deck.remaining);

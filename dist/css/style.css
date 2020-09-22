@@ -20,3 +20,7 @@ body {
 .action-div {
   padding: 25px;
 }
+
+input {
+  color: black;
+}
