@@ -36,24 +36,7 @@ const controlSearch = async () => {
   var playing = true;
   while(playing){
     const guess = gV.getInput();
-    var value_int = 0;
-    switch(value){
-      case 'ACE':
-        value_int = 1;
-        break;
-      case 'KING':
-        value_int = 13;
-        break;
-      case 'QUEEN':
-        value_int = 12;
-        break;
-      case 'JACK':
-        value_int = 11;
-        break;
-      default:
-        value_int = parseInt(value);
-        break;
-    }
+    var value_int = findVal(value);
     if (parseInt(guess) > value_int){
       console.log("too high");
     } else if (parseInt(guess) < value_int) {
@@ -68,4 +51,19 @@ const controlSearch = async () => {
   gV.renderCard(state.deck.card);
   
 
+}
+
+function findVal(value) {
+  switch(value){
+    case 'ACE':
+      return 1;
+    case 'KING':
+      return 13;
+    case 'QUEEN':
+      return 12;
+    case 'JACK':
+      return 11;
+    default:
+      return parseInt(value);
+  }
 }

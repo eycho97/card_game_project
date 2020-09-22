@@ -24,3 +24,13 @@ body {
 input {
   color: black;
 }
+
+ul
+{
+list-style-type: none;
+}
+
+.card-image {
+  max-width: 50%;
+  height: auto;
+}
